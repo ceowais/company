@@ -1347,7 +1347,7 @@ const About = () => {
             className="rounded-2xl relative z-10 w-full object-cover shadow-[0_20px_40px_rgba(0,0,0,0.15)] h-[500px]"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "src/assests/CEO.png";
+              e.target.src = "/src/assests/CEO.png";
             }}
           />
         </div>
