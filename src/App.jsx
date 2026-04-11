@@ -1347,7 +1347,7 @@ const About = () => {
             className="rounded-2xl relative z-10 w-full object-cover shadow-[0_20px_40px_rgba(0,0,0,0.15)] h-[500px]"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop";
+              e.target.src = "src/CEO.png";
             }}
           />
         </div>
