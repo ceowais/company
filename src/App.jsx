@@ -518,13 +518,13 @@ const NetworkBackground = ({ isDarkMode }) => {
 const LogoIcon = ({ className = "w-10 h-10" }) => (
   <div className={`relative rounded-full overflow-hidden border-2 border-[#D4AF37]/80 shadow-[0_0_15px_rgba(212,175,55,0.6)] bg-[#050505] flex items-center justify-center shrink-0 transition-transform duration-300 ${className}`}>
     <img 
-      src="ceowais/company/logo.png" 
+      src="src/assests/logo.png" 
       alt="CEOWAIS Logo" 
       className="w-full h-full object-cover scale-[1.05] drop-shadow-2xl"
       referrerPolicy="no-referrer"
       onError={(e) => {
         e.target.onerror = null;
-        e.target.src = "ceowais/company/logo.png";
+        e.target.src = "src/assests/logo.png";
       }}
     />
   </div>
@@ -898,7 +898,7 @@ const HeroSection = ({ navigateTo }) => (
         className="w-full h-full object-cover"
         poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
       >
-        <source src="back.mp4" type="video/mp4" />
+        <source src="src/assests/back.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-[#f8f9fa] dark:from-transparent dark:to-[#050505]"></div>
     </div>
@@ -1342,12 +1342,12 @@ const About = () => {
         <div className="w-full md:w-5/12 relative group">
           <div className="absolute inset-0 bg-[#D4AF37] rounded-2xl transform translate-x-4 translate-y-4 opacity-30 dark:opacity-50 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
           <img 
-            src="CEO.png" 
+            src="src/assests/CEO.png" 
             alt="CEO" 
             className="rounded-2xl relative z-10 w-full object-cover shadow-[0_20px_40px_rgba(0,0,0,0.15)] h-[500px]"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "CEO.png";
+              e.target.src = "src/assests/CEO.png";
             }}
           />
         </div>
