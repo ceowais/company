@@ -1342,7 +1342,7 @@ const About = () => {
         <div className="w-full md:w-5/12 relative group">
           <div className="absolute inset-0 bg-[#D4AF37] rounded-2xl transform translate-x-4 translate-y-4 opacity-30 dark:opacity-50 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
           <img 
-            src="src/assests/CEO.png" 
+            src="/csrc/assests/CEO.png" 
             alt="CEO" 
             className="rounded-2xl relative z-10 w-full object-cover shadow-[0_20px_40px_rgba(0,0,0,0.15)] h-[500px]"
             onError={(e) => {
