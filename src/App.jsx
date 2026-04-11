@@ -518,13 +518,13 @@ const NetworkBackground = ({ isDarkMode }) => {
 const LogoIcon = ({ className = "w-10 h-10" }) => (
   <div className={`relative rounded-full overflow-hidden border-2 border-[#D4AF37]/80 shadow-[0_0_15px_rgba(212,175,55,0.6)] bg-[#050505] flex items-center justify-center shrink-0 transition-transform duration-300 ${className}`}>
     <img 
-      src="logo.png" 
+      src="ceowais/company/logo.png" 
       alt="CEOWAIS Logo" 
       className="w-full h-full object-cover scale-[1.05] drop-shadow-2xl"
       referrerPolicy="no-referrer"
       onError={(e) => {
         e.target.onerror = null;
-        e.target.src = "logo.png";
+        e.target.src = "ceowais/company/logo.png";
       }}
     />
   </div>
