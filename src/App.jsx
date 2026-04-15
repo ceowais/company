@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AirTicketing from './AirTicketing.jsx';
 import { 
   Menu, X, Sun, Moon, ChevronRight, CheckCircle2, Star, Mail, Phone, MapPin, 
   Send, Globe, Server, Smartphone, Zap, Search, Shield, ChevronDown, 
@@ -9,6 +10,9 @@ import {
   Network, Database, Lock, Hexagon, ExternalLink,
   PenTool, Code2, FileCheck, Lightbulb, ShieldCheck
 } from 'lucide-react';
+import logoImage from './assets/logo.png';
+import ceoImage from './assets/CEO.png';
+import heroVideo from './assets/back.mp4';
 
 // --- CUSTOM STYLES & ANIMATIONS ---
 const customStyles = `
@@ -30,6 +34,8 @@ const customStyles = `
   .animate-glow { animation: glow 3s infinite; }
   .animate-float { animation: float 6s ease-in-out infinite; }
   .animate-pulse-gold { animation: pulse-gold 2s infinite; }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+  .animate-fade-in { animation: fade-in 0.6s ease-out both; }
   
   /* Premium Light Mode White Boxes & Dark Mode Glass Panels */
   .glass-panel {
@@ -46,6 +52,7 @@ const customStyles = `
   }
   
   @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+  .animate-shimmer { animation: shimmer 4s linear infinite; }
   @keyframes reveal-up { from { opacity: 0; transform: translateY(30px); filter: blur(8px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
   .animate-reveal { animation: reveal-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
@@ -518,13 +525,13 @@ const NetworkBackground = ({ isDarkMode }) => {
 const LogoIcon = ({ className = "w-10 h-10" }) => (
   <div className={`relative rounded-full overflow-hidden border-2 border-[#D4AF37]/80 shadow-[0_0_15px_rgba(212,175,55,0.6)] bg-[#050505] flex items-center justify-center shrink-0 transition-transform duration-300 ${className}`}>
     <img 
-      src="src/assests/logo.png" 
+      src={logoImage}
       alt="CEOWAIS Logo" 
       className="w-full h-full object-cover scale-[1.05] drop-shadow-2xl"
       referrerPolicy="no-referrer"
       onError={(e) => {
         e.target.onerror = null;
-        e.target.src = "src/assests/logo.png";
+        e.target.src = logoImage;
       }}
     />
   </div>
@@ -898,7 +905,7 @@ const HeroSection = ({ navigateTo }) => (
         className="w-full h-full object-cover"
         poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
       >
-        <source src="src/assests/back.mp4" type="video/mp4" />
+        <source src={heroVideo} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-[#f8f9fa] dark:from-transparent dark:to-[#050505]"></div>
     </div>
@@ -1342,12 +1349,12 @@ const About = () => {
         <div className="w-full md:w-5/12 relative group">
           <div className="absolute inset-0 bg-[#D4AF37] rounded-2xl transform translate-x-4 translate-y-4 opacity-30 dark:opacity-50 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
           <img 
-            src="src/assests/CEO.png" 
+            src={ceoImage}
             alt="CEO" 
             className="rounded-2xl relative z-10 w-full object-cover shadow-[0_20px_40px_rgba(0,0,0,0.15)] h-[500px]"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "src/assests/CEO.png";
+              e.target.src = ceoImage;
             }}
           />
         </div>
@@ -2894,7 +2901,7 @@ export default function App() {
       dropdown: [
         { name: 'IT Consulting', id: 'it-consulting', icon: <Server size={16} /> },
         { name: 'Freelancing Work', id: 'freelancing-work', icon: <Briefcase size={16} /> },
-        { name: 'Jobs Consulting', id: 'jobs-consulting', icon: <Target size={16} /> },
+        { name: "Air Ticketing & Visa's", id: 'jobs-consulting', icon: <Plane size={16} /> },
         { name: 'Career Guide', id: 'career-guide', icon: <BookOpen size={16} /> },
         { name: 'Overseas Consulting', id: 'overseas-consulting', icon: <Globe size={16} /> },
         { name: 'Sales & Marketing', id: 'sales-marketing', icon: <Megaphone size={16} /> },
@@ -3132,7 +3139,7 @@ export default function App() {
         {currentPage === 'services' && <Services navigateTo={navigateTo} />}
         {currentPage === 'it-consulting' && <ITConsulting navigateTo={navigateTo} />}
         {currentPage === 'freelancing-work' && <FreelancingWork navigateTo={navigateTo} />}
-        {currentPage === 'jobs-consulting' && <ServiceSubPage title="Jobs Consulting" />}
+        {currentPage === 'jobs-consulting' && <AirTicketing navigateTo={navigateTo} isDarkMode={isDarkMode} />}
         {currentPage === 'career-guide' && <ServiceSubPage title="Career Guide" />}
         {currentPage === 'overseas-consulting' && <ServiceSubPage title="Overseas Consulting" />}
         {currentPage === 'sales-marketing' && <ServiceSubPage title="Sales & Marketing" />}
