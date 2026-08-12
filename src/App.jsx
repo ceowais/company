@@ -3257,7 +3257,7 @@ export default function App() {
           </div>
         </div>
         <div className="text-center text-sm text-gray-500 border-t border-gray-200 dark:border-white/10 pt-8 max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center font-medium">
-          <p>&copy; 2026 CorTec Solutions. All rights reserved.</p>
+          <p>&copy; 2026 CorTec Solutions. All rights reserved .</p>
           <p className="mt-2 md:mt-0">Powered by <span className="text-[#D4AF37] font-bold">CorTec Solutions</span></p>
         </div>
       </footer>
