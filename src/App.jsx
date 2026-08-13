@@ -898,7 +898,7 @@ const HeroSection = ({ navigateTo }) => (
         className="w-full h-full object-cover"
         poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
       >
-        <source src="Assets/back.mp4" type="video/mp4" />
+        <source src="src/assests/back.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-[#f8f9fa] dark:from-transparent dark:to-[#050505]"></div>
     </div>
@@ -1342,12 +1342,12 @@ const About = () => {
         <div className="w-full md:w-5/12 relative group">
           <div className="absolute inset-0 bg-[#D4AF37] rounded-2xl transform translate-x-4 translate-y-4 opacity-30 dark:opacity-50 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
           <img 
-            src="Assets/CEO.png" 
+            src="src/assests/CEO.png" 
             alt="CEO" 
             className="rounded-2xl relative z-10 w-full object-cover shadow-[0_20px_40px_rgba(0,0,0,0.15)] h-[500px]"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "Assets/CEO.png";
+              e.target.src = "src/assests/CEO.png";
             }}
           />
         </div>
