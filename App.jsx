@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import cortecLogo from '../cortec.png';
 import { 
   Menu, X, Sun, Moon, ChevronRight, CheckCircle2, Star, Mail, Phone, MapPin, 
   Send, Globe, Server, Smartphone, Zap, Search, Shield, ChevronDown, 
@@ -516,16 +515,17 @@ const NetworkBackground = ({ isDarkMode }) => {
 };
 
 // --- HELPER: LOGO ICON ---
-const LogoIcon = ({ className = "w-10 h-10", isDarkMode = true }) => (
-  <div
-    className={`relative rounded-full overflow-hidden border-2 border-[#D4AF37]/80 shadow-[0_0_15px_rgba(212,175,55,0.6)] flex items-center justify-center shrink-0 transition-transform duration-300 ${className} ${isDarkMode ? 'bg-[#050505]' : 'bg-white'}`}
-    style={{ background: isDarkMode ? '#050505' : '#ffffff' }}
-  >
-    <img
-      src={cortecLogo}
-      alt="CorTec Solutions Logo"
-      className="w-full h-full object-contain scale-[1.05] drop-shadow-2xl"
+const LogoIcon = ({ className = "w-10 h-10" }) => (
+  <div className={`relative rounded-full overflow-hidden border-2 border-[#D4AF37]/80 shadow-[0_0_15px_rgba(212,175,55,0.6)] flex items-center justify-center shrink-0 transition-transform duration-300 bg-white dark:bg-[#050505] ${className}`}>
+    <img 
+      src="src/assests/cortec.png" 
+      alt="CorTec Solutions Logo" 
+      className="w-full h-full object-cover scale-[1.05] drop-shadow-2xl"
       referrerPolicy="no-referrer"
+      onError={(e) => {
+        e.target.onerror = null;
+        e.target.src = "src/assests/cortec.png";
+      }}
     />
   </div>
 );
@@ -1353,15 +1353,15 @@ const About = () => {
         </div>
         <div className="w-full md:w-7/12">
           <h2 className="text-sm uppercase tracking-widest text-[#D4AF37] font-bold mb-2">Leadership</h2>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Technology Leadership <br/>Built for Growth</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Visionary Behind the <br/>Digital Pulse</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-            "CorTec Solutions was created to bridge business vision with digital execution. We combine strategy, engineering, and operational insight to build technology systems that create measurable business value."
+            "Technology is not just about writing code; it's about crafting experiences that elevate human potential. We built this agency to bridge the gap between imagination and digital reality."
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="flex items-center gap-4">
               <div>
-                <p className="font-bold text-xl text-gray-900 dark:text-white">CorTec Leadership</p>
-                <p className="text-[#D4AF37] font-semibold">Core Technology Solutions</p>
+                <p className="font-bold text-xl text-gray-900 dark:text-white">Awais khan</p>
+                <p className="text-[#D4AF37] font-semibold">Founder & CEO</p>
               </div>
             </div>
             
@@ -1386,56 +1386,56 @@ const About = () => {
       <div className="glass-panel p-8 md:p-12 rounded-3xl mb-24 border border-[#D4AF37]/20">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.25em] text-[#D4AF37] font-bold mb-3">Core Technology Solutions</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
-            CorTec Solutions is a modern technology company focused on <span className="text-[#D4AF37]">transforming ideas into scalable digital systems</span>
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">CorTec Solutions is a <span className="text-[#D4AF37]">Core Technology Solutions company</span></h2>
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mt-5 leading-relaxed">
+            We help organizations convert strategy into execution through structured consulting, modern engineering, and continuous optimization. Our delivery model is designed to be transparent, scalable, and outcome-driven.
+          </p>
         </div>
 
         <div className="mb-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4 items-stretch relative">
-            {[
-              { title: 'Discovery', desc: 'We learn your business goals, users, risks, and opportunities.' },
-              { title: 'Strategy', desc: 'We define roadmap, priorities, technology stack, and measurable outcomes.' },
-              { title: 'Design', desc: 'We shape premium UX, systems architecture, and product experience.' },
-              { title: 'Build', desc: 'We engineer scalable platforms, automations, and digital products.' },
-              { title: 'Launch', desc: 'We test, validate, and release with performance and security in focus.' },
-              { title: 'Optimize', desc: 'We refine, monitor, and scale your digital ecosystem for growth.' }
-            ].map((step, index) => (
-              <React.Fragment key={step.title}>
-                <div className="relative h-full">
-                  <div className="glass-panel h-full p-5 rounded-2xl border border-[#D4AF37]/20 bg-gradient-to-br from-white to-[#fffaf0] dark:from-[#111111] dark:to-[#0a0a0a]">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] font-black flex items-center justify-center">0{index + 1}</span>
-                      <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">Flow</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{step.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{step.desc}</p>
-                  </div>
-                </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">Professional Service Flow</h3>
+        </div>
 
-                {index < 5 && (
-                  <div key={`${step.title}-arrow`} className="hidden xl:flex items-center justify-center text-[#D4AF37]">
-                    <ChevronRight size={26} />
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
+        <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 mb-10">
+          {[
+            { title: 'Discover & Consult', desc: 'Business assessment, pain-point mapping, and strategic roadmap planning.' },
+            { title: 'Design & Architect', desc: 'Service blueprinting, solution architecture, and implementation planning.' },
+            { title: 'Build & Integrate', desc: 'Web, cloud, data, and automation delivery aligned with your operations.' },
+            { title: 'Optimize & Scale', desc: 'Performance tuning, security hardening, support, and growth enablement.' }
+          ].map((step, index) => (
+            <React.Fragment key={step.title}>
+              <div className="flex-1 min-w-0 glass-panel p-6 rounded-2xl border border-[#D4AF37]/20 bg-gradient-to-br from-white to-[#fffaf0] dark:from-[#111111] dark:to-[#0a0a0a]">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] font-black flex items-center justify-center">0{index + 1}</span>
+                  <span className="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">Step</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{step.desc}</p>
+              </div>
+
+              {index < 3 && (
+                <div key={`${step.title}-arrow`} className="hidden lg:flex items-center justify-center text-[#D4AF37] px-1">
+                  <div className="w-14 h-[2px] bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37] to-[#D4AF37]/20"></div>
+                  <ChevronRight size={20} className="-ml-1" />
+                </div>
+              )}
+            </React.Fragment>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              title: 'Business Technology Strategy',
-              text: 'We align digital transformation with strategic business goals to improve efficiency, increase visibility, and support sustainable growth.'
+              title: 'Business Strategy',
+              text: 'We align technology initiatives with business goals to create efficient systems, measurable growth, and competitive advantage.'
             },
             {
-              title: 'Digital Product & Platform Delivery',
-              text: 'From websites and mobile experiences to systems and automation, we design and deliver resilient technology products that perform.'
+              title: 'Digital Product Delivery',
+              text: 'From web platforms to customer journey experiences, we build scalable, elegant solutions designed for performance and trust.'
             },
             {
-              title: 'Operational Performance',
-              text: 'We help teams stay secure, agile, and competitive through monitoring, optimization, business automation, and ongoing technical support.'
+              title: 'Operational Excellence',
+              text: 'We support growth with automation, monitoring, security, optimization, and long-term technical leadership that keeps your business moving.'
             }
           ].map((item) => (
             <div key={item.title} className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-black/20 p-6">
@@ -3001,7 +3001,7 @@ export default function App() {
             <div className={`transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'} nav-orbit`}></div>
             
             <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white dark:bg-black/40 border border-[#D4AF37]/30 shadow-[0_5px_15px_rgba(212,175,55,0.3)] group-hover:animate-pulse-gold relative z-10">
-              <LogoIcon className="w-8 h-8" isDarkMode={isDarkMode} />
+              <LogoIcon className="w-8 h-8" />
             </div>
             <span className="font-bold text-xl tracking-wide hidden sm:block text-gray-900 dark:text-white relative z-10">
               Cor<span className="text-[#D4AF37]">Tec</span> Solutions
@@ -3187,7 +3187,7 @@ export default function App() {
           </div>
 
           <div className={`absolute bottom-12 flex flex-col items-center gap-4 transition-all duration-1000 ${isMobileMenuOpen ? 'opacity-100 translate-y-0 delay-[800ms]' : 'opacity-0 translate-y-10'} z-50 pointer-events-none`}>
-             <LogoIcon className="w-20 h-20 shadow-[0_0_30px_rgba(212,175,55,0.4)]" isDarkMode={isDarkMode} />
+             <LogoIcon className="w-20 h-20 shadow-[0_0_30px_rgba(212,175,55,0.4)]" />
              <p className="text-[#D4AF37] font-bold tracking-widest uppercase text-xs mt-2">CorTec Solutions</p>
           </div>
         </div>
@@ -3216,7 +3216,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-6 group cursor-pointer" onClick={() => navigateTo('home')}>
-              <LogoIcon className="w-14 h-14 group-hover:animate-pulse-gold transition-all duration-300" isDarkMode={isDarkMode} />
+              <LogoIcon className="w-14 h-14 group-hover:animate-pulse-gold transition-all duration-300" />
               <span className="font-bold text-2xl text-gray-900 dark:text-white">
                 Cor<span className="text-[#D4AF37]">Tec</span> Solutions
               </span>
@@ -3257,8 +3257,8 @@ export default function App() {
           </div>
         </div>
         <div className="text-center text-sm text-gray-500 border-t border-gray-200 dark:border-white/10 pt-8 max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center font-medium">
-          <p>&copy; 2026 CorTec Solutions. All rights reserved .</p>
-          <p className="mt-2 md:mt-0">Powered by <span className="text-[#D4AF37] font-bold">CorTec Solutions</span></p>
+          <p>&copy; 2026 CorTec Solutions. All rights reserved.</p>
+          <p className="mt-2 md:mt-0">BY AWAIS <span className="text-[#D4AF37] font-bold">KHAN</span></p>
         </div>
       </footer>
     </div>
